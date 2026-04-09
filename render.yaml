@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ai-resume-analyzer-api
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DATABASE
+        value: ai_resume_analyzer
+      - key: CORS_ORIGINS
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini

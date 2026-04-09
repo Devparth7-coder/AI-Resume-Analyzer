@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply min-h-screen bg-ink font-body text-slate-100 antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(94, 234, 212, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(125, 211, 252, 0.16), transparent 28%),
+    linear-gradient(180deg, #06101c 0%, #08111d 40%, #09121d 100%);
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+.glass-panel {
+  @apply border border-white/10 bg-slate-900/65 backdrop-blur-xl shadow-soft;
+}
+
+.panel-grid {
+  @apply grid gap-6 md:grid-cols-2 xl:grid-cols-4;
+}
+
+.section-title {
+  @apply font-display text-2xl font-semibold tracking-tight text-white;
+}
+
+.section-copy {
+  @apply text-sm leading-6 text-slate-300;
+}
+
+.form-input {
+  @apply w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-mint/70 focus:bg-white/10;
+}
+
+.primary-button {
+  @apply inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-mint to-glow px-5 py-3 text-sm font-semibold text-slate-950 transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.secondary-button {
+  @apply inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10;
+}
+
+.tag {
+  @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200;
+}
